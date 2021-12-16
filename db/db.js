@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const conectarMongoDB = async () => {
     try{
         console.log("Conectando a MongoDB a través de Mongoose...");
+
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('Conectado a MongoDB.');
     }catch(e) {
@@ -24,6 +25,22 @@ const cerrarMongoDB = async () => {
         
     }
 }
+
+
+// exports.ListaUsuarios = async () =>{
+
+//         try {
+//             const cursor = mongoose.connection().db("CodereDb").collection("usuarios").find();
+//             return cursor.sort({nombre: 1}).toArray();
+                       
+//         }catch (e) {
+//             console.log("Ocurrió un error al intentar la conexión de la base ");
+//             console.log(e);
+//             await cerrarMongoDB();
+//         }
+        
+      
+// }
 
 exports.conectarMongoDB = conectarMongoDB;
 exports.cerrarMongoDB = cerrarMongoDB;

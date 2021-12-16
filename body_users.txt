@@ -1,0 +1,37 @@
+{
+    "id_usuario":"025",
+    "nombre":"prueba"
+    "primerApellido":"Evert"
+    "segundoApellido":"envio de datos"
+    "fechaNacimiento":"06/12/1997"
+    "tipoDoc":"Cedula de Ciudadania"
+    "nDoc":"123694562"
+    "lugarExpedicion":"Barranquilla"
+    "fechaExpedicio":"10/12/2010"
+    "departamento":"Atlántico"
+    "municipio":"Barranquilla"
+    "direccion":"Cra 89#56-12"
+    "email":"andres323@gmail.com"
+    "movil":"3006596325"
+    "username":"adreguzman"
+    "password":"12345678"
+    "rol":"admin"
+    "saldo":"0.00"
+}
+
+router.get = ('/lista', async (request, response) =>{
+    const cursor = new User();
+
+    try {
+        const datosU = await User.find().exec();
+        // cursor.sort({nombre: 1}).toArray();
+        response.send(datosU);
+        console-log("se recibieron los datos")
+
+    }catch (e) {
+        response.status(500).send("Ocurrió un error al intentar la conexión con la base de datos");
+        console.log(e);
+        await cerrarMongoDB();
+    }
+        
+});
