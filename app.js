@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const cors = require('cors');
 const express = require('express');
 const cookieparser = require('cookie-parser');
 
@@ -9,6 +9,7 @@ const  { registrarControladores } = require('./controllers');
 
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 9000;
 
 const bp = require('body-parser'); 
