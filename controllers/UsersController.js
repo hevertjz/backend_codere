@@ -20,7 +20,9 @@ router.post('/nuevo', async (request, response)=>{
 });
 
 //esto es lo unico que debo exportar al proyecto raiz.
-// funcion para traer datos de mongo
+
+
+// funcion para traer datos de mongo //aqui inicia agregado evert
 router.get('/lista', async (request, response) =>{
 
     try {
@@ -37,7 +39,7 @@ router.get('/lista', async (request, response) =>{
         
 });
 
-// aqui termina adicion proyecto raiz
+// aqui termina adicion proyecto raiz // finaliza evert
 
 
 
